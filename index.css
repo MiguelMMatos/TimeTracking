@@ -1,0 +1,341 @@
+:root {
+    /* colors */
+    --blue: 246, 80%, 60%;
+    --light-red-work: 15, 100%, 70%;
+    --soft-blue: 195, 74%, 62%;
+    --light-red-study: 348, 100%, 68%;
+    --lime-green: 145, 58%, 55%;
+    --violet: 264, 64%, 52%;
+    --soft-orange: 43, 84%, 65%;
+    --very-dark-blue: 226, 43%, 10%;
+    --dark-blue: 235, 46%, 20%;
+    --desaturated-blue: 235, 45%, 61%;
+    --pale-blue: 236, 100%, 87%;
+    /* Text */
+    --font-size: 18px;
+    --font-family: 'Rubik', sans-serif;
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-900: 900;
+    --buttonFontSize: 40px;
+    /* border */
+    --border-radius: 20px;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background: hsl(var(--very-dark-blue));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* remove animations for people who've turned them off */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Tracking Dashboard */
+
+#timeTracking {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.grid-dashboard {
+    width: 100%;
+    padding: 20px;
+    row-gap: 0;
+    grid-template-areas: "userProfile" "timeStamps";
+    grid-template-rows: 1fr;
+}
+
+.userProfile {
+    grid-area: userProfile;
+    width: 100%;
+    color: white;
+}
+
+.report-text {
+    font-size: 14px;
+}
+
+.report-text>p {
+    font-size: 24px;
+}
+
+#UserData {
+    justify-content: center;
+    padding-inline: 10px;
+}
+
+.image-profile {
+    border: 3px white solid;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+#TimeSelector {
+    position: relative;
+    bottom: 30px;
+}
+
+.time-container {
+    width: 100%;
+    padding-top: 30px;
+    justify-content: space-evenly;
+}
+
+.time-color {
+    color: hsl(var(--pale-blue))
+}
+
+
+/* Time Section */
+
+#TimeSection {
+    grid-area: timeStamps;
+}
+
+.timeStamps {
+    grid-template-areas: "work" "play" "study" "exercise" "social" "self-care";
+}
+
+#Work {
+    grid-area: work;
+}
+
+#Play {
+    grid-area: play;
+}
+
+#Study {
+    grid-area: study;
+}
+
+#Exercise {
+    grid-area: exercise;
+}
+
+#Social {
+    grid-area: social;
+}
+
+#SelfCare {
+    grid-area: self-care;
+}
+
+.bottom-offset {
+    position: relative;
+    bottom: 40px;
+}
+
+.icon-offset {
+    position: relative;
+    left: -20px;
+    float: right;
+    background-size: 50px 50px;
+}
+
+.card-grid {
+    width: 100%;
+    height: 100%;
+    color: white;
+    justify-content: space-between;
+    grid-template-areas: "name button" "hours lastWeek";
+    padding-inline: 20px;
+}
+
+.card-name {
+    grid-area: name;
+    align-self: flex-end;
+    font-size: 18px;
+    font-weight: var(--weight-900);
+}
+
+.card-button {
+    grid-area: button;
+    align-self: flex-end;
+    justify-self: flex-end;
+    font-weight: var(--weight-500);
+    font-size: var(--buttonFontSize);
+    margin-top: calc(var(--buttonFontSize) * -1);
+}
+
+.card-hours {
+    grid-area: hours;
+    font-weight: var(--weight-500);
+    font-size: 32px;
+}
+
+.card-lastWeek {
+    grid-area: lastWeek;
+    align-self: center;
+    font-size: 15px;
+    padding-bottom: 25px;
+    color: hsl(var(--pale-blue));
+}
+
+.selected {
+    color: white;
+}
+
+
+/* Utility Classes */
+
+.card-top {
+    width: 100%;
+    height: 110px;
+    border-radius: var(--border-radius);
+    z-index: var(--z-index);
+    background: hsl(var(--color));
+}
+
+.card-bottom {
+    width: 100%;
+    height: 80px;
+    border-radius: var(--border-radius);
+    z-index: var(--z-index);
+    background: hsl(var(--color));
+}
+
+.card-top-user {
+    width: 100%;
+    height: 110px;
+    border-radius: var(--border-radius);
+    z-index: var(--z-index);
+    background: hsl(var(--color));
+}
+
+.card-bottom-user {
+    width: 100%;
+    height: 80px;
+    border-radius: var(--border-radius);
+    z-index: var(--z-index);
+    background: hsl(var(--color));
+}
+
+.custom-background {
+    background: hsl(var(--background));
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+
+/* Screen > 1440 px */
+
+@media screen and (min-width: 1440px) {
+    #timeTracking {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid-dashboard {
+        width: 70%;
+        height: 500px;
+        justify-content: center;
+        grid-template-areas: "userProfile timeStamps";
+        grid-template-columns: 1fr 2fr;
+        column-gap: -10px;
+    }
+    .timeStamps {
+        grid-template-areas: "work play study" "exercise social self-care";
+        column-gap: 30px;
+    }
+    .card-top {
+        width: 100%;
+        height: 180px;
+    }
+    .card-top-user {
+        width: 70%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .card-bottom-user {
+        width: 70%;
+        height: 60%;
+        margin-bottom: 10px;
+    }
+    .time-container {
+        padding-left: 35px;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .image-profile {
+        border: 3px white solid;
+        border-radius: 50%;
+        margin: 0;
+        margin-bottom: 20px;
+        display: flex;
+        align-self: flex-start;
+        margin-left: 20px;
+    }
+    .report-text {
+        margin-left: 20px;
+    }
+    .report-text>p {
+        font-size: 32px;
+    }
+    .card-grid {
+        grid-template-areas: "name button" "hours hours" "lastWeek .";
+        padding-top: 20px;
+    }
+    .card-hours {
+        padding-top: 30px;
+        font-weight: var(--weight-500);
+        font-size: 52px;
+    }
+}
